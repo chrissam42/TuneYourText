@@ -10,11 +10,11 @@
         </button>
       </header>
       <b-dropdown v-model="fontFamily" :mobile-modal="false">
-        <button id="select-font-button" type="button" slot="trigger">
+        <button id="select-font-button" type="button" slot="trigger" :style="{fontFamily:cssFontFamily(fontFamily)}">
           {{currentFont.name}}
         </button>
         <b-dropdown-item v-for="fontname in fontNames" :key="fontname" :value="fontname">
-          <div :style="{fontFamily:cssFontFamily(fontname)}">
+          <div class="select-font-item" :style="{fontFamily:cssFontFamily(fontname)}">
             {{allFonts[fontname].name}}
           </div>
         </b-dropdown-item>

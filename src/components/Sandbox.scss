@@ -1,12 +1,14 @@
 @import '../assets/css/input-range.scss';
 
+$readability-yellow: #d8c046;
+
 #control-panel {
   position: fixed;
   top: 0;
   right: 0;
   padding: 2em;
-  border-left: 1px solid #d8c046;
-  border-bottom: 1px solid #d8c046;
+  border-left: 1px solid $readability-yellow;
+  border-bottom: 1px solid $readability-yellow;
   background: rgba(255, 255, 255, 0.9);
   color: black;
   width: 2in;
@@ -55,9 +57,47 @@
     margin-top: 0.5em;
   }
   
+  #select-font-button {
+    appearance: none;
+    display: block;
+    padding: 0.5em 0 0.1em;
+    margin-bottom: 1em;
+    background: transparent;
+    border: 0;
+    font-size: 18px;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid $readability-yellow;
+    position: relative;
+    
+    &::after {
+      display: block;
+      content: "▾";
+      position: absolute;
+      bottom: 0.5ex;
+      right: 3px;
+      font-family: Verdana;
+      color: #999;
+      transition: transform 0.1s;
+    }
+  }
+  
+  .dropdown {
+    display: block !important;
+    text-align: left;
+
+    &.is-active #select-font-button::after {
+      transform: translateY(0.3em) rotateZ(180deg);
+    }
+  }
+  
   .dropdown-item.is-active {
-    background: #d8c046;
+    background: $readability-yellow;
     color: black;
+  }
+  
+  .select-font-item {
+    font-size: 18px;
   }
 }
 
