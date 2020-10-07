@@ -11,13 +11,13 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 //our own vuex modules
-// import fonts from "./modules/fonts";
+import fonts from "./modules/fonts";
 // import controlPanel from "./modules/control-panel";
 // import measureText from "./modules/measure-text";
 
 const store = new Vuex.Store({
   modules: { 
-    // fonts,
+    fonts,
     // controlPanel,
     // measureText,
   },

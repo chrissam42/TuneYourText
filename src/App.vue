@@ -15,6 +15,9 @@
     components: {
       Sandbox,
     },
+    created() {
+      this.$store.dispatch("injectStyles");
+    },
     data: () => ({
     }),
     computed: {

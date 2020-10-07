@@ -1,10 +1,29 @@
-import ControlPanel from "./ControlPanel.vue";
+// import ControlPanel from "./ControlPanel.vue";
 
 export default {
-  name: "TuneYourText",
-  components: {
-    ControlPanel,
+  name: "Sandbox",
+  data: () => ({
+    font: null
+  }),
+  created() {
+    this.font = Object.keys(this.$store.state.fonts.fonts)[0];
   },
-  props: {
-  }
+  computed: {
+    fontInfo() {
+      return this.$store.state.fonts.fonts;
+    },
+    fontNames() {
+      return Object.keys(this.fontInfo);
+    },
+    sandboxCSS() {
+      return {
+        fontFamily: this.cssFontFamily(this.font),
+      }
+    },
+  },
+  methods: {
+    cssFontFamily(fontname) {
+      return this.$store.getters.cssFontFamily(fontname);
+    },
+  },
 };
