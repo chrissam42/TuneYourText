@@ -1,10 +1,16 @@
 <template>
   <div id='readability-sandbox'>
     
-    <div id="control-panel">
-      <header>Control Panel</header>
-      <b-dropdown v-model="font">
-        <button type="button" slot="trigger">
+    <div id="control-panel" :class="{open:cpVisible}">
+      <header>
+        Tune Your Text™
+        <button id='cp-show-hide' type="button" @click="cpVisible = !cpVisible">
+          <template v-if="cpVisible">&gt;</template>
+          <template v-else>&lt;</template>
+        </button>
+      </header>
+      <b-dropdown v-model="fontFamily" :mobile-modal="false">
+        <button id="select-font-button" type="button" slot="trigger">
           {{currentFont.name}}
         </button>
         <b-dropdown-item v-for="fontname in fontNames" :key="fontname" :value="fontname">
@@ -14,11 +20,14 @@
         </b-dropdown-item>
       </b-dropdown>
       
+      <label for="select-size">Font size</label>
+      <input id="select-size" type="range" min="9" max="24" v-model="fontSize">
+
       <label for="select-width">Font width</label>
-      <input id="select-width" type="range" :min="currentFont.widths[0]" :max="currentFont.widths[2]" v-model="width" :disabled="currentFont.widths[0] == currentFont.widths[2]">
+      <input id="select-width" type="range" :min="currentFont.widths[0]" :max="currentFont.widths[2]" v-model="fontWidth" :disabled="currentFont.widths[0] == currentFont.widths[2]">
 
       <label for="select-width">Font weight</label>
-      <input id="select-width" type="range" :min="currentFont.weights[0]" :max="currentFont.weights[2]" v-model="weight">
+      <input id="select-width" type="range" :min="currentFont.weights[0]" :max="currentFont.weights[2]" v-model="fontWeight">
 
       <label for="line-height">Line spacing</label>
       <input id="line-height" type="range" min="0.8" max="2.5" v-model="lineSpacing" step="0.01">
