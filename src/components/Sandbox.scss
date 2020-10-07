@@ -5,8 +5,8 @@
   right: 1rem;
   padding: 1rem;
   border-radius: 0.5em;
-  background: rgba(0, 0, 0, 0.75);
-  color: white;
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
   width: 300px;
   
   font-size: 10pt;
@@ -36,5 +36,17 @@
       grid-column: 1;
       grid-row: 1;
     }
+  }
+}
+
+#tuned-text {
+  max-width: 35em;
+  margin: 0 auto;
+  h2 {
+    font: inherit;
+  }
+  
+  p {
+    margin: 1em 0;
   }
 }

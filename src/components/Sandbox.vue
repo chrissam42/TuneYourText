@@ -5,14 +5,29 @@
       <header>Control Panel</header>
       <b-dropdown v-model="font">
         <button type="button" slot="trigger">
-          {{fontInfo[font].name}}
+          {{currentFont.name}}
         </button>
         <b-dropdown-item v-for="fontname in fontNames" :key="fontname" :value="fontname">
           <div :style="{fontFamily:cssFontFamily(fontname)}">
-            {{fontInfo[fontname].name}}
+            {{allFonts[fontname].name}}
           </div>
         </b-dropdown-item>
       </b-dropdown>
+      
+      <label for="select-width">Width</label>
+      <input id="select-width" type="range" :min="currentFont.widths[0]" :max="currentFont.widths[2]" v-model="width">
+
+      <label for="select-width">Weight</label>
+      <input id="select-width" type="range" :min="currentFont.weights[0]" :max="currentFont.weights[2]" v-model="weight">
+
+      <label for="line-height">Line spacing</label>
+      <input id="line-height" type="range" min="0.8" max="2.5" v-model="lineSpacing" step="0.01">
+
+      <label for="letter-spacing">Letter spacing</label>
+      <input id="letter-spacing" type="range" min="-0.2" max="0.5" v-model="charSpacing" step="0.01">
+
+      <label for="word-spacing">Word spacing</label>
+      <input id="word-spacing" type="range" min="-1" max="3" v-model="wordSpacing" step="0.01">
     </div>
 
     <article id='tuned-text' :style="sandboxCSS">
