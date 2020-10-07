@@ -15,7 +15,7 @@
       </b-dropdown>
       
       <label for="select-width">Font width</label>
-      <input id="select-width" type="range" :min="currentFont.widths[0]" :max="currentFont.widths[2]" v-model="width">
+      <input id="select-width" type="range" :min="currentFont.widths[0]" :max="currentFont.widths[2]" v-model="width" :disabled="currentFont.widths[0] == currentFont.widths[2]">
 
       <label for="select-width">Font weight</label>
       <input id="select-width" type="range" :min="currentFont.weights[0]" :max="currentFont.weights[2]" v-model="weight">
