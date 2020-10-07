@@ -14,10 +14,10 @@
         </b-dropdown-item>
       </b-dropdown>
       
-      <label for="select-width">Width</label>
+      <label for="select-width">Font width</label>
       <input id="select-width" type="range" :min="currentFont.widths[0]" :max="currentFont.widths[2]" v-model="width">
 
-      <label for="select-width">Weight</label>
+      <label for="select-width">Font weight</label>
       <input id="select-width" type="range" :min="currentFont.weights[0]" :max="currentFont.weights[2]" v-model="weight">
 
       <label for="line-height">Line spacing</label>
@@ -28,6 +28,9 @@
 
       <label for="word-spacing">Word spacing</label>
       <input id="word-spacing" type="range" min="-1" max="3" v-model="wordSpacing" step="0.01">
+
+      <label for="column-width">Column width</label>
+      <input id="column-width" type="range" min="15" max="60" v-model="columnWidth" step="0.1">
     </div>
 
     <article id='tuned-text' :style="sandboxCSS">

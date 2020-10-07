@@ -9,6 +9,7 @@ export default {
     lineSpacing: 1.4,
     charSpacing: 0.0,
     wordSpacing: 0.0,
+    columnWidth: 35.0,
   }),
   computed: {
     allFonts() {
@@ -28,6 +29,7 @@ export default {
         lineHeight: this.lineSpacing,
         letterSpacing: this.charSpacing + 'em',
         wordSpacing: this.wordSpacing + 'em',
+        maxWidth: this.columnWidth + 'em',
       }
     },
   },
