@@ -40,5 +40,9 @@ export default {
     cssFontFamily(fontname) {
       return this.$store.getters.cssFontFamily(fontname);
     },
+    resetToDefaults() {
+      this.fontWidth = this.currentFont.widths[1];
+      this.fontWeight = this.currentFont.weights[1];
+    }
   },
 };
