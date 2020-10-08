@@ -3,12 +3,13 @@
     
     <div id="control-panel" :class="{open:cpVisible}">
       <header>
-        Tune Your Text™
+        <img src="../assets/images/tune-your-text.png" alt="Tune Your Text">
         <button id='cp-show-hide' type="button" @click="cpVisible = !cpVisible">
           <template v-if="cpVisible">&gt;</template>
           <template v-else>&lt;</template>
         </button>
       </header>
+      
       <b-dropdown v-model="fontFamily" :mobile-modal="false">
         <button id="select-font-button" type="button" slot="trigger" :style="{fontFamily:cssFontFamily(fontFamily)}">
           {{currentFont.name}}
@@ -20,24 +21,25 @@
         </b-dropdown-item>
       </b-dropdown>
       
-      <label for="select-size">Font size</label>
+      <label for="select-size">Size</label>
       <input id="select-size" type="range" min="9" max="24" v-model="fontSize">
 
-      <label for="select-width">Font width</label>
+      <label for="letter-spacing">Character spacing</label>
+      <input id="letter-spacing" type="range" min="-0.2" max="0.5" v-model="charSpacing" step="0.01">
+
+      <label for="select-width">Width</label>
       <input id="select-width" type="range" :min="currentFont.widths[0]" :max="currentFont.widths[2]" v-model="fontWidth" :disabled="currentFont.widths[0] == currentFont.widths[2]">
 
-      <label for="select-width">Font weight</label>
+      <label for="select-width">Weight</label>
       <input id="select-width" type="range" :min="currentFont.weights[0]" :max="currentFont.weights[2]" v-model="fontWeight">
 
       <label for="line-height">Line spacing</label>
       <input id="line-height" type="range" min="0.8" max="2.5" v-model="lineSpacing" step="0.01">
 
-      <label for="letter-spacing">Letter spacing</label>
-      <input id="letter-spacing" type="range" min="-0.2" max="0.5" v-model="charSpacing" step="0.01">
-
+<!-- 
       <label for="word-spacing">Word spacing</label>
       <input id="word-spacing" type="range" min="-1" max="3" v-model="wordSpacing" step="0.01">
-
+ -->
       <label for="column-width">Column width</label>
       <input id="column-width" type="range" min="15" max="60" v-model="columnWidth" step="0.1">
     </div>

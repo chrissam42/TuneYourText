@@ -4,11 +4,11 @@
     > header {
       border-bottom: 2px solid #d8c046;
       #logo-link {
-        $height: 1in;
+        $height: 0.875in;
         display: inline-block;
         height: $height;
-        $padding: $height * 11 / 96;
-        padding-left: calc(4vw - #{$padding});
+        box-sizing: border-box;
+        padding: 0.1625in 4vw;
         img {
           height: 100%;
           width: auto;
