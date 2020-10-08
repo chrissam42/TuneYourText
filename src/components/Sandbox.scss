@@ -6,7 +6,7 @@ $readability-yellow: #d8c046;
   position: fixed;
   top: 0;
   right: 0;
-  padding: 2em;
+  padding: 1em 2em;
   border-left: 1px solid #5e5e5e;
   border-bottom: 1px solid #5e5e5e;
   background: rgba(255, 255, 255, 0.9);
@@ -48,7 +48,7 @@ $readability-yellow: #d8c046;
   
   header {
     font-size: smaller;
-    margin: -0.6em 0 1em;
+    margin: 0.35rem 0 1em;
     
     img {
       height: 12px;
@@ -108,8 +108,10 @@ $readability-yellow: #d8c046;
 
 #tuned-text {
   margin: 4vh 4vw;
+  
   h2 {
     font: inherit;
+    font-size: 150%;
   }
   
   p {
