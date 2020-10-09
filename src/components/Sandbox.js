@@ -12,6 +12,7 @@ export default {
     charSpacing: 0.0,
     wordSpacing: 0.0,
     columnWidth: 35.0,
+    colorCombo: "black-on-white",
   }),
   computed: {
     allFonts() {

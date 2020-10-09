@@ -1,5 +1,5 @@
 <template>
-  <div id='readability-sandbox'>
+  <div id='readability-sandbox' :class="colorCombo">
     
     <div id="control-panel" :class="{open:cpVisible}">
       <header>
@@ -43,6 +43,16 @@
  -->
       <label for="column-width">Column width</label>
       <input id="column-width" type="range" min="15" max="60" v-model="columnWidth" step="0.1">
+      
+      <input id="theme-black-on-white" type="radio" name="color-combo" value="black-on-white" :checked="colorCombo=='black-on-white'" v-model="colorCombo">
+      <label for="theme-black-on-white" class="color-combo black-on-white">A</label>
+
+      <input id="theme-white-on-black" type="radio" name="color-combo" value="white-on-black" :checked="colorCombo=='white-on-black'" v-model="colorCombo">
+      <label for="theme-white-on-black" class="color-combo white-on-black">A</label>
+
+      <input id="theme-black-on-blue" type="radio" name="color-combo" value="black-on-blue" :checked="colorCombo=='black-on-blue'" v-model="colorCombo">
+      <label for="theme-black-on-blue" class="color-combo black-on-blue">A</label>
+
     </div>
 
     <article id='tuned-text' :style="sandboxCSS">
