@@ -7,8 +7,8 @@ $readability-yellow: #d8c046;
   top: 0;
   right: 0;
   padding: 1em 2em;
-  border-left: 1px solid #5e5e5e;
-  border-bottom: 1px solid #5e5e5e;
+  border-left: 2px solid #5e5e5e;
+  border-bottom: 2px solid #5e5e5e;
   background: rgba(255, 255, 255, 0.9);
   color: black;
   width: 2in;
@@ -65,7 +65,7 @@ $readability-yellow: #d8c046;
   #select-font-button {
     appearance: none;
     display: block;
-    padding: 0.5em 0 0.1em;
+    padding: 0.1em 0;
     margin-bottom: 1em;
     background: transparent;
     border: 0;
@@ -79,10 +79,11 @@ $readability-yellow: #d8c046;
       display: block;
       content: "▾";
       position: absolute;
-      bottom: 0.5ex;
-      right: 3px;
+      bottom: 2px;
+      right: 6px;
+      font-size: 120%;
       font-family: Verdana;
-      color: #999;
+      color: $readability-yellow;
       transition: transform 0.1s;
     }
   }
@@ -98,7 +99,8 @@ $readability-yellow: #d8c046;
   
   .dropdown-item.is-active {
     background: $readability-yellow;
-    color: black;
+    color: white;
+    font-weight: bold;
   }
   
   .select-font-item {

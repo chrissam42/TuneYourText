@@ -2,11 +2,17 @@
 export default {
   state: () => ({
     fonts: {
-      RobotoFlex: {
-        name: "Roboto Flex",
-        weights: [100, 400, 1000],
-        widths: [25, 100, 151],
-        hasSlnt: -10,
+      Amstelvar: {
+        name: "Amstelvar",
+        weights: [100, 400, 900],
+        widths: [50, 100, 125],
+        hasItalic: true,
+      },
+      Cabin: {
+        name: "Cabin",
+        weights: [400, 400, 700],
+        widths: [75, 100, 100],
+        hasItalic: true,
       },
       IBMPlexSans: {
         name: "IBM Plex Sans",
@@ -14,22 +20,22 @@ export default {
         widths: [85, 100, 100],
         hasItalic: true,
       },
-      Quicksand: {
-        name: "Quicksand",
-        weights: [300, 400, 700],
-        widths: [100, 100, 100],
-      },
       Literata: {
         name: "Literata",
         weights: [200, 400, 900],
         widths: [100, 100, 100],
         hasItalic: true,
       },
-      Amstelvar: {
-        name: "Amstelvar",
-        weights: [100, 400, 900],
-        widths: [50, 100, 125],
-        hasItalic: true,
+      Quicksand: {
+        name: "Quicksand",
+        weights: [300, 400, 700],
+        widths: [100, 100, 100],
+      },
+      RobotoFlex: {
+        name: "Roboto Flex",
+        weights: [100, 400, 1000],
+        widths: [25, 100, 151],
+        hasSlnt: -10,
       },
       RobotoSerif: {
         name: "Roboto Serif",

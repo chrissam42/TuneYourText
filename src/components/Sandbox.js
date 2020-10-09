@@ -4,7 +4,7 @@ export default {
   name: "Sandbox",
   data: () => ({
     cpVisible: true,
-    fontFamily: "RobotoFlex",
+    fontFamily: "Amstelvar",
     fontSize: 16,
     fontWidth: 100,
     fontWeight: 400,
