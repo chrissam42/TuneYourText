@@ -30,6 +30,7 @@
 </template>
 
 <script>
+  import "./assets/js/analytics.js";
   import Sandbox from "./components/Sandbox.vue";
   
   export default {
