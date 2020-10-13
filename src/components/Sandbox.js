@@ -2,18 +2,28 @@
 
 export default {
   name: "Sandbox",
-  data: () => ({
-    cpVisible: true,
-    fontFamily: "Amstelvar",
-    fontSize: 16,
-    fontWidth: 100,
-    fontWeight: 400,
-    lineSpacing: 1.4,
-    charSpacing: 0.0,
-    wordSpacing: 0.0,
-    columnWidth: 35.0,
-    colorCombo: "black-on-white",
-  }),
+  data: () => {
+    var data = {
+      defaults: {
+        fontFamily: "Amstelvar",
+        fontSize: 16,
+        fontWidth: 100,
+        fontWeight: 400,
+        lineSpacing: 1.4,
+        charSpacing: 0.0,
+        wordSpacing: 0.0,
+        columnWidth: 35.0,
+        colorCombo: "black-on-white",
+      },
+      cpVisible: true,
+    };
+    
+    Object.keys(data.defaults).forEach(k => {
+      data[k]  = data.defaults[k];
+    });
+    
+    return data;
+  },
   computed: {
     allFonts() {
       return this.$store.state.fonts.fonts;
@@ -41,9 +51,12 @@ export default {
     cssFontFamily(fontname) {
       return this.$store.getters.cssFontFamily(fontname);
     },
-    resetToDefaults() {
-      this.fontWidth = this.currentFont.widths[1];
-      this.fontWeight = this.currentFont.weights[1];
+    resetToDefaults(all) {
+      Object.keys(this.defaults).forEach(k => {
+        if (all || !k.match(/fontFamily|colorCombo/)) {
+          this[k]  = this.defaults[k];
+        }
+      });
     }
   },
 };

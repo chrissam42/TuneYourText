@@ -12,6 +12,7 @@ $readability-yellow: #d8c046;
   background: rgba(255, 255, 255, 0.9);
   color: black;
   width: 2in;
+  overflow-y: auto;
   
   font-size: 12px;
   
@@ -48,7 +49,7 @@ $readability-yellow: #d8c046;
   
   header {
     font-size: smaller;
-    margin: 0.35rem 0 1em;
+    margin: 2rem 0 1em;
     
     img {
       height: 12px;
@@ -130,6 +131,23 @@ $readability-yellow: #d8c046;
   
   .select-font-item {
     font-size: 18px;
+  }
+  
+  #reset-settings {
+    appearance: none;
+    display: inline-block;
+    background: $readability-yellow;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 0.2em 1em 0.3em;
+    width: 100%;
+    text-align: center;
+    margin-top: 2em;
+    
+    &:active {
+      transform: scale(0.95);
+    }
   }
 }
 

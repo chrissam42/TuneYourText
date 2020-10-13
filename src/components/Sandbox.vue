@@ -53,6 +53,8 @@
       <input id="theme-black-on-blue" type="radio" name="color-combo" value="black-on-blue" :checked="colorCombo=='black-on-blue'" v-model="colorCombo">
       <label for="theme-black-on-blue" class="color-combo black-on-blue">A</label>
 
+      <button type="button" id="reset-settings" @click="resetToDefaults(false)">Reset all</button>
+
     </div>
 
     <article id='tuned-text' :style="sandboxCSS">
