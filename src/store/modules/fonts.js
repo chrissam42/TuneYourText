@@ -44,7 +44,7 @@ export default {
 
       return `@font-face {
         font-family: "${fontname} RM";
-        src: url("/fonts/${filebase}.woff2") format("woff2");
+        src: url("fonts/${filebase}.woff2") format("woff2");
         font-weight: ${fontinfo.weights[0]} ${fontinfo.weights[2]};
         font-style: ${fontstyle};
         font-stretch: ${fontinfo.widths[0]}% ${fontinfo.widths[2]}%;

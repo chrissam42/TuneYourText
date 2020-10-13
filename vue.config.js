@@ -1,4 +1,6 @@
 module.exports = {
+  publicPath: "/sandbox/",
+  indexPath: "sandbox.html",
   configureWebpack: {
     devtool: "source-map"
   },
