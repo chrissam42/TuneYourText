@@ -32,7 +32,7 @@ export default {
     cssFontFamily: () => (fontname) => {
       return `"${fontname} RM"`;
     },
-    atFontFace: (state /* , getters */ ) => (fontname, italic) => {
+    atFontFace: (state, getters) => (fontname, italic) => {
       const fontinfo = state.fonts[fontname];
 
       if (!fontinfo) {
@@ -43,7 +43,7 @@ export default {
       const fontstyle = italic ? 'italic' : 'normal';
 
       return `@font-face {
-        font-family: "${fontname} RM";
+        font-family: ${getters.cssFontFamily(fontname)};
         src: url("fonts/${filebase}.woff2") format("woff2");
         font-weight: ${fontinfo.weights[0]} ${fontinfo.weights[2]};
         font-style: ${fontstyle};
