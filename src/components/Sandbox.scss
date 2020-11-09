@@ -1,6 +1,45 @@
-@import '../assets/css/input-range.scss';
-
 $readability-yellow: #d8c046;
+
+
+// Buefy styles with customization
+
+//slider
+$slider-radius: 0;
+$slider-track-background: black;
+$slider-track-radius: 0;
+$slider-thumb-background: $readability-yellow;
+$slider-thumb-radius: 14px;
+$slider-thumb-border: none;
+$slider-thumb-to-track-ratio: 7;
+$slider-tick-to-track-ratio: 4;
+$slider-tick-width: 1rem * $slider-tick-to-track-ratio / $slider-thumb-to-track-ratio;
+$slider-tick-radius: $slider-tick-width;
+$slider-tick-background: black;
+$slider-mark-size: 9px;
+$slider-colors: (black, black);
+
+
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
+//overrides
+#readability-matters-site {
+  .b-slider {
+    margin-bottom: 1.5rem;
+  }
+  .b-slider-track, .b-slider-fill, .b-slider-tick {
+    background: $slider-track-background !important;
+  }
+  .b-slider-tick {
+    z-index: 2;
+  }
+  .b-slider-tick-label {
+    top: calc(0.5rem + 0.5em);
+  }
+}
+
+//our own input range styling
+@import '../assets/css/input-range.scss';
 
 #control-panel {
   position: fixed;

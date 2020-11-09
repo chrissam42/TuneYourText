@@ -23,26 +23,50 @@
       </b-dropdown>
       
       <label for="select-size">Size</label>
-      <input id="select-size" type="range" min="9" max="24" v-model="fontSize">
+      <b-slider id="select-size" :min="9" :max="24" v-model="fontSize" :tooltip="false">
+        <b-slider-tick :value="9">9</b-slider-tick>
+        <b-slider-tick :value="defaults.fontSize">{{defaults.fontSize}}</b-slider-tick>
+        <b-slider-tick :value="24">24</b-slider-tick>
+      </b-slider>
 
       <label for="letter-spacing">Character spacing</label>
-      <input id="letter-spacing" type="range" min="-0.2" max="0.5" v-model="charSpacing" step="0.01">
+      <b-slider id="letter-spacing" :min="-0.2" :max="0.5" v-model="charSpacing" :step="0.01" :tooltip="false">
+        <b-slider-tick :value="-0.2">-20%</b-slider-tick>
+        <b-slider-tick :value="0">0</b-slider-tick>
+        <b-slider-tick :value="0.5">+50%</b-slider-tick>
+      </b-slider>
 
       <label for="select-width">Width</label>
-      <input id="select-width" type="range" :min="currentFont.widths[0]" :max="currentFont.widths[2]" v-model="fontWidth" :disabled="currentFont.widths[0] == currentFont.widths[2]">
+      <b-slider id="select-width" :min="currentFont.widths[0]" :max="currentFont.widths[2]" v-model="fontWidth" :tooltip="false" :disabled="currentFont.widths[0] == currentFont.widths[2]">
+        <b-slider-tick :value="currentFont.widths[0]">{{currentFont.widths[0]}}%</b-slider-tick>
+        <b-slider-tick :value="currentFont.widths[1]">{{currentFont.widths[1]}}%</b-slider-tick>
+        <b-slider-tick :value="currentFont.widths[2]">{{currentFont.widths[2]}}%</b-slider-tick>
+      </b-slider>
 
       <label for="select-width">Weight</label>
-      <input id="select-width" type="range" :min="currentFont.weights[0]" :max="currentFont.weights[2]" v-model="fontWeight">
+      <b-slider id="select-weight" :min="currentFont.weights[0]" :max="currentFont.weights[2]" v-model="fontWeight" :tooltip="false" :disabled="currentFont.weights[0] == currentFont.weights[2]">
+        <b-slider-tick :value="currentFont.weights[0]">{{currentFont.weights[0]}}</b-slider-tick>
+        <b-slider-tick :value="currentFont.weights[1]">{{currentFont.weights[1]}}</b-slider-tick>
+        <b-slider-tick :value="currentFont.weights[2]">{{currentFont.weights[2]}}</b-slider-tick>
+      </b-slider>
 
       <label for="line-height">Line spacing</label>
-      <input id="line-height" type="range" min="0.8" max="2.5" v-model="lineSpacing" step="0.01">
+      <b-slider id="line-height" :min="0.8" :max="2.5" :step="0.01" v-model="lineSpacing" :tooltip="false">
+        <b-slider-tick :value="0.8">0.8</b-slider-tick>
+        <b-slider-tick :value="defaults.lineSpacing">{{defaults.lineSpacing}}</b-slider-tick>
+        <b-slider-tick :value="2.5">2.5</b-slider-tick>
+      </b-slider>
 
 <!-- 
       <label for="word-spacing">Word spacing</label>
       <input id="word-spacing" type="range" min="-1" max="3" v-model="wordSpacing" step="0.01">
  -->
       <label for="column-width">Column width</label>
-      <input id="column-width" type="range" min="15" max="60" v-model="columnWidth" step="0.1">
+      <b-slider id="column-width" :min="15" :max="60" :step="0.1" v-model="columnWidth" :tooltip="false">
+        <b-slider-tick :value="15">15</b-slider-tick>
+        <b-slider-tick :value="defaults.columnWidth">{{defaults.columnWidth}}</b-slider-tick>
+        <b-slider-tick :value="60">60</b-slider-tick>
+      </b-slider>
       
       <input id="theme-black-on-white" type="radio" name="color-combo" value="black-on-white" :checked="colorCombo=='black-on-white'" v-model="colorCombo">
       <label for="theme-black-on-white" class="color-combo black-on-white">A</label>
