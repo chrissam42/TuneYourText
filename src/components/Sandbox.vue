@@ -24,37 +24,37 @@
       
       <label for="select-size">Size</label>
       <b-slider id="select-size" :min="9" :max="24" v-model="fontSize" :tooltip="false">
-        <b-slider-tick :value="9">9</b-slider-tick>
-        <b-slider-tick :value="defaults.fontSize">{{defaults.fontSize}}</b-slider-tick>
-        <b-slider-tick :value="24">24</b-slider-tick>
+        <b-slider-tick :value="9"><span style="font-size:9px" aria-label="Small" role="presentation">A</span></b-slider-tick>
+        <b-slider-tick :value="defaults.fontSize"><span style="font-size:11px" aria-label="Default" role="presentation">A</span></b-slider-tick>
+        <b-slider-tick :value="24"><span style="font-size:14px" aria-label="Large" role="presentation">A</span></b-slider-tick>
       </b-slider>
 
       <label for="letter-spacing">Character spacing</label>
       <b-slider id="letter-spacing" :min="-0.2" :max="0.5" v-model="charSpacing" :step="0.01" :tooltip="false">
-        <b-slider-tick :value="-0.2">-20%</b-slider-tick>
-        <b-slider-tick :value="0">0</b-slider-tick>
-        <b-slider-tick :value="0.5">+50%</b-slider-tick>
+        <b-slider-tick :value="-0.2"><span style="letter-spacing:-1px" aria-label="Tight" role="presentation">AA</span></b-slider-tick>
+        <b-slider-tick :value="0"><span style="letter-spacing:1px" aria-label="Default" role="presentation">AA</span></b-slider-tick>
+        <b-slider-tick :value="0.5"><span style="letter-spacing:3px" aria-label="Loose" role="presentation">AA</span></b-slider-tick>
       </b-slider>
 
       <label for="select-width">Width</label>
       <b-slider id="select-width" :min="currentFont.widths[0]" :max="currentFont.widths[2]" v-model="fontWidth" :tooltip="false" :disabled="currentFont.widths[0] == currentFont.widths[2]">
-        <b-slider-tick :value="currentFont.widths[0]">{{currentFont.widths[0]}}%</b-slider-tick>
-        <b-slider-tick :value="currentFont.widths[1]">{{currentFont.widths[1]}}%</b-slider-tick>
-        <b-slider-tick :value="currentFont.widths[2]">{{currentFont.widths[2]}}%</b-slider-tick>
+        <b-slider-tick :value="currentFont.widths[0]"><span style="font-stretch:25%" aria-label="Narrow" role="presentation">A</span></b-slider-tick>
+        <b-slider-tick :value="currentFont.widths[1]"><span style="font-stretch:100%" aria-label="Default" role="presentation">A</span></b-slider-tick>
+        <b-slider-tick :value="currentFont.widths[2]"><span style="font-stretch:150%" aria-label="Wide" role="presentation">A</span></b-slider-tick>
       </b-slider>
 
       <label for="select-width">Weight</label>
       <b-slider id="select-weight" :min="currentFont.weights[0]" :max="currentFont.weights[2]" v-model="fontWeight" :tooltip="false" :disabled="currentFont.weights[0] == currentFont.weights[2]">
-        <b-slider-tick :value="currentFont.weights[0]">{{currentFont.weights[0]}}</b-slider-tick>
-        <b-slider-tick :value="currentFont.weights[1]">{{currentFont.weights[1]}}</b-slider-tick>
-        <b-slider-tick :value="currentFont.weights[2]">{{currentFont.weights[2]}}</b-slider-tick>
+        <b-slider-tick :value="currentFont.weights[0]"><span style="font-weight:100" aria-label="Light" role="presentation">A</span></b-slider-tick>
+        <b-slider-tick :value="currentFont.weights[1]"><span style="font-weight:400" aria-label="Default" role="presentation">A</span></b-slider-tick>
+        <b-slider-tick :value="currentFont.weights[2]"><span style="font-weight:900" aria-label="Heavy" role="presentation">A</span></b-slider-tick>
       </b-slider>
 
       <label for="line-height">Line spacing</label>
       <b-slider id="line-height" :min="0.8" :max="2.5" :step="0.01" v-model="lineSpacing" :tooltip="false">
-        <b-slider-tick :value="0.8">0.8</b-slider-tick>
-        <b-slider-tick :value="defaults.lineSpacing">{{defaults.lineSpacing}}</b-slider-tick>
-        <b-slider-tick :value="2.5">2.5</b-slider-tick>
+        <b-slider-tick :value="0.8"><span style="line-height: 2px" aria-label="Tight" role="presentation">—<br>—<br>—</span></b-slider-tick>
+        <b-slider-tick :value="defaults.lineSpacing"><span style="line-height: 3px" aria-label="Default" role="presentation">—<br>—<br>—</span></b-slider-tick>
+        <b-slider-tick :value="2.5"><span style="line-height: 4px" aria-label="Loose" role="presentation">—<br>—<br>—</span></b-slider-tick>
       </b-slider>
 
 <!-- 
@@ -63,9 +63,9 @@
  -->
       <label for="column-width">Column width</label>
       <b-slider id="column-width" :min="15" :max="60" :step="0.1" v-model="columnWidth" :tooltip="false">
-        <b-slider-tick :value="15">15</b-slider-tick>
-        <b-slider-tick :value="defaults.columnWidth">{{defaults.columnWidth}}</b-slider-tick>
-        <b-slider-tick :value="60">60</b-slider-tick>
+        <b-slider-tick :value="15"><span style="line-height: 3px; transform:scale(1, 1)" aria-label="Narrow" role="presentation">—<br>—<br>—</span></b-slider-tick>
+        <b-slider-tick :value="defaults.columnWidth"><span style="line-height: 3px; transform:scale(2, 1)" aria-label="Default" role="presentation">—<br>—<br>—</span></b-slider-tick>
+        <b-slider-tick :value="60"><span style="line-height: 3px; transform:scale(3, 1)" aria-label="Wide" role="presentation">—<br>—<br>—</span></b-slider-tick>
       </b-slider>
       
       <input id="theme-black-on-white" type="radio" name="color-combo" value="black-on-white" :checked="colorCombo=='black-on-white'" v-model="colorCombo">
