@@ -13,6 +13,7 @@ cd dist
 echo 'rmsandbox.chrislewis.codes' > CNAME
 
 git init
+git checkout -b main
 git add -A
 git commit -m 'deploy'
 
